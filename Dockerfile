@@ -1,4 +1,4 @@
 FROM python:3.8.2-alpine
-ADD run.py /run.py
-CMD ["/run.py"]
-ENTRYPOINT ["python3"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 750 /entrypoint.sh
+ENTRYPOINT [ "/entrypoint.sh"]
